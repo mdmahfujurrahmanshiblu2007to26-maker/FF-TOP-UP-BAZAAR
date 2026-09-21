@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FF★TGR-TOPUP</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#070714,#171735,#071526);color:#fff;padding:18px}.wrap{max-width:600px;margin:auto}.card{background:#15152b;border:1px solid #37375d;border-radius:20px;padding:22px;box-shadow:0 15px 45px #0008}.logo{text-align:center;font-size:31px;font-weight:900;color:#ffd43b}.sub{text-align:center;color:#aaa;margin:7px 0 22px}label{display:block;font-weight:700;margin:13px 0 7px}input{width:100%;padding:14px;border-radius:11px;border:1px solid #505075;background:#0c0c1b;color:#fff;font-size:16px}.tabs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:15px 0}.tab{padding:12px;text-align:center;border-radius:11px;background:#252547;border:2px solid transparent;cursor:pointer;font-weight:800}.tab.active{border-color:#ffd43b;color:#ffd43b}.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.pack{padding:15px;background:#252547;border:2px solid transparent;border-radius:13px;text-align:center;cursor:pointer}.pack.active{border-color:#ffd43b;background:#30305b}.dia{color:#00e5ff;font-size:20px;font-weight:900}.price{margin-top:6px;font-weight:700}.offer{margin-top:18px;padding:14px;border-radius:12px;background:#201d35;border:1px solid #504b76;line-height:1.6}.pay{display:grid;grid-template-columns:1fr 1fr;gap:10px}.pay label{margin:0;padding:14px;border:2px solid #3e3e65;border-radius:12px;text-align:center;cursor:pointer;background:#20203b}.pay input{display:none}.pay input:checked+span{color:#ffd43b}button{width:100%;border:0;border-radius:12px;padding:15px;margin-top:18px;font-size:18px;font-weight:900;cursor:pointer;background:#ffd43b;color:#111}.result{display:none;margin-top:16px;padding:15px;border-radius:12px;background:#0e1d26;border:1px solid #286074;line-height:1.7}small{display:block;text-align:center;color:#888;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="card">
+<div class="logo">FF★TGR-TOPUP</div>
+<div class="sub">Free Fire Diamond Top-Up</div>
+
+<label>Player ID (UID)</label>
+<input id="uid" inputmode="numeric" placeholder="আপনার Player ID লিখুন">
+
+<div class="tabs">
+<div id="diamondTab" class="tab active" onclick="showType('diamond')">💎 Diamonds</div>
+<div id="monthlyTab" class="tab" onclick="showType('monthly')">📅 Monthly</div>
+</div>
+
+<div id="diamondSection">
+<label>Diamond Package</label>
+<div class="grid">
+<div class="pack" onclick="pick(this,'115 Diamonds','85')"><div class="dia">💎 115</div><div class="price">৳85</div></div>
+<div class="pack" onclick="pick(this,'240 Diamonds','170')"><div class="dia">💎 240</div><div class="price">৳170</div></div>
+<div class="pack" onclick="pick(this,'355 Diamonds','245')"><div class="dia">💎 355</div><div class="price">৳245</div></div>
+<div class="pack" onclick="pick(this,'480 Diamonds','320')"><div class="dia">💎 480</div><div class="price">৳320</div></div>
+<div class="pack" onclick="pick(this,'610 Diamonds','410')"><div class="dia">💎 610</div><div class="price">৳410</div></div>
+<div class="pack" onclick="pick(this,'725 Diamonds','485')"><div class="dia">💎 725</div><div class="price">৳485</div></div>
+<div class="pack" onclick="pick(this,'1090 Diamonds','699')"><div class="dia">💎 1090</div><div class="price">৳699</div></div>
+<div class="pack" onclick="pick(this,'1240 Diamonds','820')"><div class="dia">💎 1240</div><div class="price">৳820</div></div>
+
+<div class="pack" onclick="pick(this,'25 Diamonds','25')"><div class="dia">💎 25</div><div class="price">৳25</div></div>
+<div class="pack" onclick="pick(this,'50 Diamonds','40')"><div class="dia">💎 50</div><div class="price">৳40</div></div>
+<div class="pack" onclick="pick(this,'505 Diamonds','350')"><div class="dia">💎 505</div><div class="price">৳350</div></div>
+<div class="pack" onclick="pick(this,'850 Diamonds','820')"><div class="dia">💎 850</div><div class="price">৳820</div></div>
+<div class="pack" onclick="pick(this,'2530 Diamonds','1690')"><div class="dia">💎 2530</div><div class="price">৳1690</div></div>
+<div class="pack" onclick="pick(this,'5060 Diamonds','3250')"><div class="dia">💎 5060</div><div class="price">৳3250</div></div>
+<div class="pack" onclick="pick(this,'7590 Diamonds','4885')"><div class="dia">💎 7590</div><div class="price">৳4885</div></div>
+<div class="pack" onclick="pick(this,'10120 Diamonds','6499')"><div class="dia">💎 10120</div><div class="price">৳6499</div></div>
+<div class="pack" onclick="pick(this,'12650 Diamonds','8280')"><div class="dia">💎 12650</div><div class="price">৳8280</div></div>
+</div>
+</div>
+
+<div id="monthlySection" style="display:none">
+<label>Monthly / Special Offers</label>
+<div class="grid">
+<div class="pack" onclick="pick(this,'Weekly Membership','160')"><div class="dia">📅 Weekly</div><div class="price">৳160</div></div>
+<div class="pack" onclick="pick(this,'Monthly Membership','795')"><div class="dia">📅 Monthly</div><div class="price">৳795</div></div>
+<div class="pack" onclick="pick(this,'Weekly Lite','45')"><div class="dia">⚡ Weekly Lite</div><div class="price">৳45</div></div>
+<div class="pack" onclick="pick(this,'4X Weekly Lite','160')"><div class="dia">⚡ 4X Weekly Lite</div><div class="price">৳160</div></div>
+</div>
+<div class="offer"><b>Membership & Offers</b><br>দাম/অফার পরিবর্তন হলে Admin থেকে আপডেট করা যাবে। এখানে দেখানো Membership ও Offer মূল্য ডেমো হিসেবে রাখা হয়েছে।</div>
+</div>
+
+<label>Payment Method</label>
+<div class="pay">
+<label><input type="radio" name="pay" value="bKash"><span>💗 bKash</span></label>
+<label><input type="radio" name="pay" value="Nagad"><span>🟠 Nagad</span></label>
+</div>
+
+<div class="offer"><b>Payment Number</b><br>bKash/Nagad: <b>01983287983</b><br><small>Payment gateway/API সংযুক্ত না থাকায় এই সাইট সরাসরি টাকা কাটবে না বা payment verify করবে না।</small></div>
+
+<button onclick="order()">অর্ডার তৈরি করুন</button>
+<div id="result" class="result"></div>
+<small>© 2026 FF★TGR-TOPUP • Demo checkout</small>
+</div></div>
+
+<script>
+let pack="",price="";
+function showType(type){
+ document.getElementById('diamondSection').style.display=type==='diamond'?'block':'none';
+ document.getElementById('monthlySection').style.display=type==='monthly'?'block':'none';
+ document.getElementById('diamondTab').classList.toggle('active',type==='diamond');
+ document.getElementById('monthlyTab').classList.toggle('active',type==='monthly');
+ pack="";price="";
+ document.querySelectorAll('.pack').forEach(x=>x.classList.remove('active'));
+}
+function pick(el,p,v){document.querySelectorAll('.pack').forEach(x=>x.classList.remove('active'));el.classList.add('active');pack=p;price=v}
+function order(){
+ const uid=document.getElementById('uid').value.trim();
+ const method=document.querySelector('input[name="pay"]:checked');
+ const r=document.getElementById('result');
+ if(!uid)return alert('Player ID (UID) দিন।');
+ if(!pack)return alert('একটি Package নির্বাচন করুন।');
+ if(!method)return alert('Payment Method নির্বাচন করুন.');
+ const id='TGR-'+Date.now().toString().slice(-8);
+ r.style.display='block';
+ r.innerHTML='<b>✅ Order Created</b><br>Order ID: <b>'+id+'</b><br>UID: <b>'+uid+'</b><br>Package: <b>'+pack+'</b><br>Amount: <b>৳'+price+'</b><br>Payment: <b>'+method.value+'</b><br>Payment Number: <b>01983287983</b><br><br>এই ডেমোতে payment gateway ও automatic delivery চালু নেই।';
+}
+</script>
+</body>
+</html>
