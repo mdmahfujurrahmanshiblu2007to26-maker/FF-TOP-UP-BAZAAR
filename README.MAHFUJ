@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FF TGR TOP-UP</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#050505,#151515,#300000);
+  color:#fff;
+  min-height:100vh;
+}
+
+.header{
+  text-align:center;
+  padding:25px 15px;
+  background:#080808;
+  border-bottom:2px solid #ff2020;
+}
+
+.logo{
+  font-size:30px;
+  font-weight:bold;
+  color:#ff3030;
+}
+
+.header p{
+  color:#ddd;
+  margin-top:8px;
+}
+
+.container{
+  max-width:600px;
+  margin:auto;
+  padding:18px;
+}
+
+.card{
+  background:#151515;
+  border:1px solid #333;
+  border-radius:18px;
+  padding:20px;
+  margin-bottom:18px;
+  box-shadow:0 5px 25px rgba(0,0,0,.5);
+}
+
+.card h2{
+  color:#ff4040;
+  margin-bottom:18px;
+}
+
+label{
+  display:block;
+  margin:12px 0 7px;
+  color:#ddd;
+}
+
+input,select{
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid #444;
+  background:#222;
+  color:#fff;
+  font-size:16px;
+  outline:none;
+}
+
+input:focus,select:focus{
+  border-color:#ff3030;
+}
+
+.section-title{
+  color:#ffd43b;
+  font-size:18px;
+  margin:18px 0 12px;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.product{
+  background:#222;
+  border:1px solid #444;
+  border-radius:12px;
+  padding:14px 8px;
+  text-align:center;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.product:hover{
+  border-color:#ff3030;
+  background:#301010;
+}
+
+.product.selected{
+  border:2px solid #ff3030;
+  background:#351010;
+}
+
+.product .icon{
+  font-size:22px;
+}
+
+.product .name{
+  color:#fff;
+  font-weight:bold;
+  margin-top:6px;
+}
+
+.product .price{
+  color:#ffd43b;
+  font-weight:bold;
+  margin-top:5px;
+}
+
+button{
+  width:100%;
+  padding:15px;
+  margin-top:18px;
+  border:0;
+  border-radius:10px;
+  background:#ff2020;
+  color:#fff;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#d90000;
+}
+
+.summary{
+  display:none;
+  background:#202020;
+  border:1px solid #444;
+  border-radius:12px;
+  padding:15px;
+  margin-top:18px;
+}
+
+.summary p{
+  margin:8px 0;
+}
+
+.green{
+  color:#43e06f;
+}
+
+.yellow{
+  color:#ffd43b;
+}
+
+.notice{
+  color:#aaa;
+  font-size:13px;
+  line-height:1.6;
+}
+
+.footer{
+  text-align:center;
+  padding:25px;
+  color:#777;
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">🔥 FF TGR TOP-UP</div>
+  <p>Free Fire Diamond & Membership Top-Up</p>
+</header>
+
+<main class="container">
+
+<!-- PLAYER INFORMATION -->
+
+<div class="card">
+
+<h2>👤 Player Information</h2>
+
+<label>Free Fire UID</label>
+
+<input
+  type="number"
+  id="uid"
+  placeholder="আপনার Free Fire UID লিখুন"
+>
+
+<label>Server</label>
+
+<select id="server">
+
+<option value="Bangladesh">
+🇧🇩 Bangladesh
+</option>
+
+<option value="India">
+🇮🇳 India
+</option>
+
+<option value="Other">
+🌍 Other
+</option>
+
+</select>
+
+</div>
+
+
+<!-- DIAMOND PACKAGES -->
+
+<div class="card">
+
+<h2>💎 Diamond Packages</h2>
+
+<div class="products">
+
+<div class="product" onclick="selectProduct(this,'25 Diamonds',20)">
+<div class="icon">💎</div>
+<div class="name">25 Diamonds</div>
+<div class="price">৳20</div>
+</div>
+
+<div class="product" onclick="selectProduct(this,'50 Diamonds',35)">
+<div class="icon">💎</div>
+<div class="name">50 Diamonds</div>
+<div class="price">৳35</div>
+</div>
+
+<div class="product" onclick="selectProduct(this,'115 Diamonds',75)">
+<div class="icon">💎</div>
+<div class="name">115 Diamonds</div>
+<div class="price">৳75</div>
+</div>
+
+<div class="product" onclick="selectProduct(this,'240 Diamonds',150)">
+<div class="icon">💎</div>
+<div class="name">240 Diamonds</div>
+<div class="price">৳150</div>
+</div>
+
+<div class="product" onclick="selectProduct(this,'355 Diamonds',225)">
+<div class="icon">💎</div>
+<div class="name">355 Diamonds</div>
+<div class="price">৳225</div>
+</div>
+
+<div class="product" onclick="selectProduct(this,'480 Diamonds',300)">
+<div class="icon">💎</div>
+<div class="name">480 Diamonds</div>
+<div class="price">৳300</div>
+</div>
+
+<div class="product" onclick="selectProduct(this,'610 Diamonds',380)">
+<div class="icon">💎</div>
+<div class="name">610 Diamonds</div>
+<div class="price">৳380</div>
+</div>
+
+<div class="product" onclick="selectProduct(this,'850 Diamonds',530)">
+<div class="icon">💎</div>
+<div class="name">850 Diamonds</div>
+<div class="price">৳530</div>
+</div>
+
+<div class="product" onclick="selectProduct(this,'1090 Diamonds',680)">
+<div class="icon">💎</div>
+<div class="name">1090 Diamonds</div>
+<div class="price">৳680</div>
+</div>
+
+<div class="product" onclick="selectProduct(this,'1240 Diamonds',770)">
+<div class="icon">💎</div>
+<div class="name">1240 Diamonds</div>
+<div class="price">৳770</div>
+</div>
+
+<div class="product" onclick="selectProduct(this,'1850 Diamonds',1150)">
+<div class="icon">💎</div>
+<div class="name">1850 Diamonds</div>
+<div class="price">৳1150</div>
+</div>
+
+<div class="product" onclick="selectProduct(this,'2530 Diamonds',1530)">
+<div class="icon">💎</div>
+<div class="name">2530 Diamonds</div>
+<div class="price">৳1530</div>
+</div>
+
+<div class="product" onclick="selectProduct(this,'5060 Diamonds',3060)">
+<div class="icon">💎</div>
+<div class="name">5060 Diamonds</div>
+<div class="price">৳3060</div>
+</div>
+
+<div class="product" onclick="selectProduct(this,'7590 Diamonds',4590)">
+<div class="icon">💎</div>
+<div class="name">7590 Diamonds</div>
+<div class="price">৳4590</div>
+</div>
+
+<div class="product" onclick="selectProduct(this,'10120 Diamonds',6120)">
+<div class="icon">💎</div>
+<div class="name">10120 Diamonds</div>
+<div class="price">৳6120</div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- MEMBERSHIP -->
+
+<div class="card">
+
+<h2>🎫 Membership</h2>
+
+<div class="products">
+
+<div class="product" onclick="selectProduct(this,'Weekly Lite',99)">
+<div class="icon">🎫</div>
+<div class="name">Weekly Lite</div>
+<div class="price">৳99</div>
+</div>
+
+<div class="product" onclick="selectProduct(this,'Weekly Membership',149)">
+<div class="icon">🎫</div>
+<div class="name">Weekly</div>
+<div class="price">৳149</div>
+</div>
+
+<div class="product" onclick="selectProduct(this,'Monthly Membership',749)">
+<div class="icon">🎫</div>
+<div class="name">Monthly</div>
+<div class="price">৳749</div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ORDER -->
+
+<div class="card">
+
+<h2>🛒 Order</h2>
+
+<div class="summary" id="summary">
+
+<p>
+<b>UID:</b>
+<span id="summaryUID"></span>
+</p>
+
+<p>
+<b>Server:</b>
+<span id="summaryServer"></span>
+</p>
+
+<p>
+<b>Package:</b>
+<span id="summaryProduct"></span>
+</p>
+
+<p>
+<b>Total:</b>
+<span class="yellow" id="summaryPrice"></span>
+</p>
+
+</div>
+
+<button onclick="placeOrder()">
+CONFIRM DEMO ORDER
+</button>
+
+<p class="notice" style="margin-top:12px">
+এটি একটি Demo order system। কোনো payment তথ্য এখানে
+সংরক্ষণ করা হচ্ছে না।
+</p>
+
+</div>
+
+
+<!-- IMPORTANT -->
+
+<div class="card">
+
+<h2>ℹ️ Important</h2>
+
+<p class="notice">
+
+Free Fire UID দেওয়ার সময় সঠিক UID ব্যবহার করুন।
+<br><br>
+
+এই website বর্তমানে Demo হিসেবে তৈরি করা হয়েছে।
+বাস্তব Diamond delivery বা payment নেওয়ার জন্য
+নিরাপদ server-side system এবং অনুমোদিত payment ব্যবস্থা
+প্রয়োজন।
+
+</p>
+
+</div>
+
+</main>
+
+
+<footer class="footer">
+
+© 2026 FF TGR TOP-UP
+
+</footer>
+
+
+<script>
+
+let selectedProduct = "";
+let selectedPrice = 0;
+
+
+function selectProduct(element,product,price){
+
+selectedProduct = product;
+
+selectedPrice = price;
+
+
+/* Remove previous selection */
+
+document.querySelectorAll(".product")
+.forEach(function(item){
+
+item.classList.remove("selected");
+
+});
+
+
+/* Select current product */
+
+element.classList.add("selected");
+
+
+/* Show summary */
+
+document.getElementById("summary").style.display="block";
+
+document.getElementById("summaryProduct")
+.innerText=product;
+
+document.getElementById("summaryPrice")
+.innerText="৳"+price;
+
+}
+
+
+function placeOrder(){
+
+let uid=document.getElementById("uid").value;
+
+let server=document.getElementById("server").value;
+
+
+if(uid===""){
+
+alert("⚠️ প্রথমে আপনার Free Fire UID লিখুন!");
+
+return;
+
+}
+
+
+if(selectedProduct===""){
+
+alert("⚠️ একটি Diamond অথবা Membership নির্বাচন করুন!");
+
+return;
+
+}
+
+
+document.getElementById("summaryUID")
+.innerText=uid;
+
+document.getElementById("summaryServer")
+.innerText=server;
+
+
+alert(
+"✅ Demo Order তৈরি হয়েছে!\n\n"+
+"UID: "+uid+"\n"+
+"Server: "+server+"\n"+
+"Package: "+selectedProduct+"\n"+
+"Price: ৳"+selectedPrice
+);
+
+}
+
+</script>
+
+</body>
+</html>
